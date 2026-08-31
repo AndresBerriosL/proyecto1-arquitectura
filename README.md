@@ -1,3 +1,3 @@
 # proyecto1-arquitectura
 
-# Funcionamiento de la FPGA
+## Funcionamiento de la FPGA
