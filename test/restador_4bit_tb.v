@@ -20,12 +20,11 @@ module restador_4bit_tb;
         $dumpfile("restador_4bit.vcd");
         $dumpvars(0, restador_4bit_tb);
 
-        // Prueba 1: 5 - 3 = 2
         A = 4'b0101;
         B = 4'b0011;
         #10;
 
-        // Prueba 2: 3 - 5 = -2
+        // ahora da negativo: 3 - 5
         A = 4'b0011;
         B = 4'b0101;
         #10;
