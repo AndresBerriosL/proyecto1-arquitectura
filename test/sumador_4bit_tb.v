@@ -20,12 +20,11 @@ module sumador_4bit_tb;
         $dumpfile("sumador_4bit.vcd");
         $dumpvars(0, sumador_4bit_tb);
 
-        // Prueba 1: 9 + 3 = 12
         A = 4'b1001;
         B = 4'b0011;
         #10;
 
-        // Prueba 2: 15 + 1
+        // caso con overflow
         A = 4'b1111;
         B = 4'b0001;
         #10;
