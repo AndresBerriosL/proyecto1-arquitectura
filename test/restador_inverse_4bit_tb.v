@@ -20,12 +20,11 @@ module restador_inverso_4bit_tb;
         $dumpfile("restador_inverso_4bit.vcd");
         $dumpvars(0, restador_inverso_4bit_tb);
 
-        // B - A = 5 - 3 = 2
         A = 4'b0011;
         B = 4'b0101;
         #10;
 
-        // B - A = 3 - 5 = -2
+        // mismo caso pero al reves
         A = 4'b0101;
         B = 4'b0011;
         #10;
