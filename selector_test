@@ -1,0 +1,214 @@
+#! 
+:ivl_version "14.0 (devel)" "(s20260301-391-g64f13540a-dirty)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\OSS-CA~2\lib\ivl\system.vpi";
+:vpi_module "C:\OSS-CA~2\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\OSS-CA~2\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\OSS-CA~2\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\OSS-CA~2\lib\ivl\va_math.vpi";
+S_000002020e3d6f10 .scope module, "selector_operacion_4bit_tb" "selector_operacion_4bit_tb" 2 3;
+ .timescale -9 -12;
+v000002020e441970_0 .var "C", 2 0;
+v000002020e441ab0_0 .net "R", 3 0, L_000002020e445230;  1 drivers
+v000002020e441b50_0 .var "RESTA", 3 0;
+v000002020e441c90_0 .var "RESTA_INV", 3 0;
+v000002020e441f10_0 .var "SHIFT_L", 3 0;
+v000002020e441fb0_0 .var "SHIFT_R", 3 0;
+v000002020e4420f0_0 .var "SUMA", 3 0;
+S_000002020e3d74e0 .scope module, "SELECTOR" "selector_operacion_4bit" 2 15, 3 1 0, S_000002020e3d6f10;
+ .timescale 0 0;
+    .port_info 0 /INPUT 3 "C";
+    .port_info 1 /INPUT 4 "SUMA";
+    .port_info 2 /INPUT 4 "RESTA";
+    .port_info 3 /INPUT 4 "RESTA_INV";
+    .port_info 4 /INPUT 4 "SHIFT_L";
+    .port_info 5 /INPUT 4 "SHIFT_R";
+    .port_info 6 /OUTPUT 4 "R";
+L_000002020e3cd680 .functor NOT 1, L_000002020e442410, C4<0>, C4<0>, C4<0>;
+L_000002020e3cd530 .functor NOT 1, L_000002020e443930, C4<0>, C4<0>, C4<0>;
+L_000002020e3cded0 .functor NOT 1, L_000002020e444150, C4<0>, C4<0>, C4<0>;
+L_000002020e3cda00 .functor AND 1, L_000002020e3cd680, L_000002020e3cd530, L_000002020e444d30, C4<1>;
+L_000002020e3cdfb0 .functor AND 1, L_000002020e3cd680, L_000002020e443570, L_000002020e3cded0, C4<1>;
+L_000002020e3ce170 .functor AND 1, L_000002020e3cd680, L_000002020e444bf0, L_000002020e444c90, C4<1>;
+L_000002020e3cd4c0 .functor AND 1, L_000002020e4439d0, L_000002020e3cd530, L_000002020e3cded0, C4<1>;
+L_000002020e3cdb50 .functor AND 1, L_000002020e443bb0, L_000002020e3cd530, L_000002020e444650, C4<1>;
+L_000002020e3cdbc0 .functor AND 1, L_000002020e3cda00, L_000002020e444fb0, C4<1>, C4<1>;
+L_000002020e3cd300 .functor AND 1, L_000002020e3cdfb0, L_000002020e444dd0, C4<1>, C4<1>;
+L_000002020e3cd450 .functor AND 1, L_000002020e3ce170, L_000002020e444010, C4<1>, C4<1>;
+L_000002020e3cd7d0 .functor AND 1, L_000002020e3cd4c0, L_000002020e444290, C4<1>, C4<1>;
+L_000002020e3cd610 .functor AND 1, L_000002020e3cdb50, L_000002020e444970, C4<1>, C4<1>;
+L_000002020e3cd370/0/0 .functor OR 1, L_000002020e3cdbc0, L_000002020e3cd300, L_000002020e3cd450, L_000002020e3cd7d0;
+L_000002020e3cd370/0/4 .functor OR 1, L_000002020e3cd610, C4<0>, C4<0>, C4<0>;
+L_000002020e3cd370 .functor OR 1, L_000002020e3cd370/0/0, L_000002020e3cd370/0/4, C4<0>, C4<0>;
+L_000002020e3cd5a0 .functor AND 1, L_000002020e3cda00, L_000002020e4436b0, C4<1>, C4<1>;
+L_000002020e447d10 .functor AND 1, L_000002020e3cdfb0, L_000002020e444a10, C4<1>, C4<1>;
+L_000002020e447d80 .functor AND 1, L_000002020e3ce170, L_000002020e443a70, C4<1>, C4<1>;
+L_000002020e448330 .functor AND 1, L_000002020e3cd4c0, L_000002020e443b10, C4<1>, C4<1>;
+L_000002020e447760 .functor AND 1, L_000002020e3cdb50, L_000002020e443ed0, C4<1>, C4<1>;
+L_000002020e447b50/0/0 .functor OR 1, L_000002020e3cd5a0, L_000002020e447d10, L_000002020e447d80, L_000002020e448330;
+L_000002020e447b50/0/4 .functor OR 1, L_000002020e447760, C4<0>, C4<0>, C4<0>;
+L_000002020e447b50 .functor OR 1, L_000002020e447b50/0/0, L_000002020e447b50/0/4, C4<0>, C4<0>;
+L_000002020e447fb0 .functor AND 1, L_000002020e3cda00, L_000002020e4440b0, C4<1>, C4<1>;
+L_000002020e447a00 .functor AND 1, L_000002020e3cdfb0, L_000002020e444e70, C4<1>, C4<1>;
+L_000002020e447a70 .functor AND 1, L_000002020e3ce170, L_000002020e445050, C4<1>, C4<1>;
+L_000002020e4476f0 .functor AND 1, L_000002020e3cd4c0, L_000002020e4446f0, C4<1>, C4<1>;
+L_000002020e4475a0 .functor AND 1, L_000002020e3cdb50, L_000002020e445370, C4<1>, C4<1>;
+L_000002020e448250/0/0 .functor OR 1, L_000002020e447fb0, L_000002020e447a00, L_000002020e447a70, L_000002020e4476f0;
+L_000002020e448250/0/4 .functor OR 1, L_000002020e4475a0, C4<0>, C4<0>, C4<0>;
+L_000002020e448250 .functor OR 1, L_000002020e448250/0/0, L_000002020e448250/0/4, C4<0>, C4<0>;
+L_000002020e447610 .functor AND 1, L_000002020e3cda00, L_000002020e444f10, C4<1>, C4<1>;
+L_000002020e447ae0 .functor AND 1, L_000002020e3cdfb0, L_000002020e4450f0, C4<1>, C4<1>;
+L_000002020e448410 .functor AND 1, L_000002020e3ce170, L_000002020e4448d0, C4<1>, C4<1>;
+L_000002020e447680 .functor AND 1, L_000002020e3cd4c0, L_000002020e445190, C4<1>, C4<1>;
+L_000002020e447bc0 .functor AND 1, L_000002020e3cdb50, L_000002020e4443d0, C4<1>, C4<1>;
+L_000002020e4482c0/0/0 .functor OR 1, L_000002020e447610, L_000002020e447ae0, L_000002020e448410, L_000002020e447680;
+L_000002020e4482c0/0/4 .functor OR 1, L_000002020e447bc0, C4<0>, C4<0>, C4<0>;
+L_000002020e4482c0 .functor OR 1, L_000002020e4482c0/0/0, L_000002020e4482c0/0/4, C4<0>, C4<0>;
+v000002020e3d1ec0_0 .net "C", 2 0, v000002020e441970_0;  1 drivers
+v000002020e3d30e0_0 .net "R", 3 0, L_000002020e445230;  alias, 1 drivers
+v000002020e3d3360_0 .net "RESTA", 3 0, v000002020e441b50_0;  1 drivers
+v000002020e3d1f60_0 .net "RESTA_INV", 3 0, v000002020e441c90_0;  1 drivers
+v000002020e3d20a0_0 .net "SHIFT_L", 3 0, v000002020e441f10_0;  1 drivers
+v000002020e3d2960_0 .net "SHIFT_R", 3 0, v000002020e441fb0_0;  1 drivers
+v000002020e3d2be0_0 .net "SUMA", 3 0, v000002020e4420f0_0;  1 drivers
+v000002020e3d3860_0 .net *"_ivl_11", 0 0, L_000002020e444d30;  1 drivers
+v000002020e3d2d20_0 .net *"_ivl_14", 0 0, L_000002020e443570;  1 drivers
+v000002020e3d2f00_0 .net *"_ivl_17", 0 0, L_000002020e444bf0;  1 drivers
+v000002020e3d2a00_0 .net *"_ivl_19", 0 0, L_000002020e444c90;  1 drivers
+v000002020e3d3720_0 .net *"_ivl_2", 0 0, L_000002020e442410;  1 drivers
+v000002020e3d2aa0_0 .net *"_ivl_22", 0 0, L_000002020e4439d0;  1 drivers
+v000002020e3d3400_0 .net *"_ivl_25", 0 0, L_000002020e443bb0;  1 drivers
+v000002020e3d3040_0 .net *"_ivl_27", 0 0, L_000002020e444650;  1 drivers
+v000002020e3d34a0_0 .net *"_ivl_30", 0 0, L_000002020e444fb0;  1 drivers
+v000002020e3d2460_0 .net *"_ivl_33", 0 0, L_000002020e444dd0;  1 drivers
+v000002020e3d2140_0 .net *"_ivl_36", 0 0, L_000002020e444010;  1 drivers
+v000002020e3d23c0_0 .net *"_ivl_39", 0 0, L_000002020e444290;  1 drivers
+v000002020e3d2b40_0 .net *"_ivl_42", 0 0, L_000002020e444970;  1 drivers
+v000002020e3d3540_0 .net *"_ivl_44", 0 0, L_000002020e3cd370;  1 drivers
+v000002020e3d35e0_0 .net *"_ivl_48", 0 0, L_000002020e4436b0;  1 drivers
+v000002020e3d3680_0 .net *"_ivl_5", 0 0, L_000002020e443930;  1 drivers
+v000002020e3d39a0_0 .net *"_ivl_51", 0 0, L_000002020e444a10;  1 drivers
+v000002020e3d21e0_0 .net *"_ivl_54", 0 0, L_000002020e443a70;  1 drivers
+v000002020e3d2320_0 .net *"_ivl_57", 0 0, L_000002020e443b10;  1 drivers
+v000002020e3cc420_0 .net *"_ivl_60", 0 0, L_000002020e443ed0;  1 drivers
+v000002020e441510_0 .net *"_ivl_62", 0 0, L_000002020e447b50;  1 drivers
+v000002020e441330_0 .net *"_ivl_66", 0 0, L_000002020e4440b0;  1 drivers
+v000002020e442550_0 .net *"_ivl_69", 0 0, L_000002020e444e70;  1 drivers
+v000002020e4425f0_0 .net *"_ivl_72", 0 0, L_000002020e445050;  1 drivers
+v000002020e442690_0 .net *"_ivl_75", 0 0, L_000002020e4446f0;  1 drivers
+v000002020e441e70_0 .net *"_ivl_78", 0 0, L_000002020e445370;  1 drivers
+v000002020e442af0_0 .net *"_ivl_8", 0 0, L_000002020e444150;  1 drivers
+v000002020e441470_0 .net *"_ivl_80", 0 0, L_000002020e448250;  1 drivers
+v000002020e442910_0 .net *"_ivl_84", 0 0, L_000002020e444f10;  1 drivers
+v000002020e442870_0 .net *"_ivl_87", 0 0, L_000002020e4450f0;  1 drivers
+v000002020e4415b0_0 .net *"_ivl_90", 0 0, L_000002020e4448d0;  1 drivers
+v000002020e441bf0_0 .net *"_ivl_93", 0 0, L_000002020e445190;  1 drivers
+v000002020e442230_0 .net *"_ivl_96", 0 0, L_000002020e4443d0;  1 drivers
+v000002020e441290_0 .net *"_ivl_98", 0 0, L_000002020e4482c0;  1 drivers
+v000002020e442730_0 .net "d0", 0 0, L_000002020e3cd610;  1 drivers
+v000002020e441650_0 .net "d1", 0 0, L_000002020e447760;  1 drivers
+v000002020e4416f0_0 .net "d2", 0 0, L_000002020e4475a0;  1 drivers
+v000002020e441dd0_0 .net "d3", 0 0, L_000002020e447bc0;  1 drivers
+v000002020e442050_0 .net "i0", 0 0, L_000002020e3cd450;  1 drivers
+v000002020e4429b0_0 .net "i1", 0 0, L_000002020e447d80;  1 drivers
+v000002020e442b90_0 .net "i2", 0 0, L_000002020e447a70;  1 drivers
+v000002020e441790_0 .net "i3", 0 0, L_000002020e448410;  1 drivers
+v000002020e442ff0_0 .net "l0", 0 0, L_000002020e3cd7d0;  1 drivers
+v000002020e441150_0 .net "l1", 0 0, L_000002020e448330;  1 drivers
+v000002020e441d30_0 .net "l2", 0 0, L_000002020e4476f0;  1 drivers
+v000002020e4422d0_0 .net "l3", 0 0, L_000002020e447680;  1 drivers
+v000002020e4427d0_0 .net "nC0", 0 0, L_000002020e3cded0;  1 drivers
+v000002020e4424b0_0 .net "nC1", 0 0, L_000002020e3cd530;  1 drivers
+v000002020e442e10_0 .net "nC2", 0 0, L_000002020e3cd680;  1 drivers
+v000002020e442c30_0 .net "r0", 0 0, L_000002020e3cd300;  1 drivers
+v000002020e442a50_0 .net "r1", 0 0, L_000002020e447d10;  1 drivers
+v000002020e442cd0_0 .net "r2", 0 0, L_000002020e447a00;  1 drivers
+v000002020e442d70_0 .net "r3", 0 0, L_000002020e447ae0;  1 drivers
+v000002020e442f50_0 .net "s0", 0 0, L_000002020e3cdbc0;  1 drivers
+v000002020e442eb0_0 .net "s1", 0 0, L_000002020e3cd5a0;  1 drivers
+v000002020e441830_0 .net "s2", 0 0, L_000002020e447fb0;  1 drivers
+v000002020e4418d0_0 .net "s3", 0 0, L_000002020e447610;  1 drivers
+v000002020e4411f0_0 .net "sel_inv", 0 0, L_000002020e3ce170;  1 drivers
+v000002020e4413d0_0 .net "sel_resta", 0 0, L_000002020e3cdfb0;  1 drivers
+v000002020e442190_0 .net "sel_sl", 0 0, L_000002020e3cd4c0;  1 drivers
+v000002020e442370_0 .net "sel_sr", 0 0, L_000002020e3cdb50;  1 drivers
+v000002020e441a10_0 .net "sel_suma", 0 0, L_000002020e3cda00;  1 drivers
+L_000002020e442410 .part v000002020e441970_0, 2, 1;
+L_000002020e443930 .part v000002020e441970_0, 1, 1;
+L_000002020e444150 .part v000002020e441970_0, 0, 1;
+L_000002020e444d30 .part v000002020e441970_0, 0, 1;
+L_000002020e443570 .part v000002020e441970_0, 1, 1;
+L_000002020e444bf0 .part v000002020e441970_0, 1, 1;
+L_000002020e444c90 .part v000002020e441970_0, 0, 1;
+L_000002020e4439d0 .part v000002020e441970_0, 2, 1;
+L_000002020e443bb0 .part v000002020e441970_0, 2, 1;
+L_000002020e444650 .part v000002020e441970_0, 0, 1;
+L_000002020e444fb0 .part v000002020e4420f0_0, 0, 1;
+L_000002020e444dd0 .part v000002020e441b50_0, 0, 1;
+L_000002020e444010 .part v000002020e441c90_0, 0, 1;
+L_000002020e444290 .part v000002020e441f10_0, 0, 1;
+L_000002020e444970 .part v000002020e441fb0_0, 0, 1;
+L_000002020e4436b0 .part v000002020e4420f0_0, 1, 1;
+L_000002020e444a10 .part v000002020e441b50_0, 1, 1;
+L_000002020e443a70 .part v000002020e441c90_0, 1, 1;
+L_000002020e443b10 .part v000002020e441f10_0, 1, 1;
+L_000002020e443ed0 .part v000002020e441fb0_0, 1, 1;
+L_000002020e4440b0 .part v000002020e4420f0_0, 2, 1;
+L_000002020e444e70 .part v000002020e441b50_0, 2, 1;
+L_000002020e445050 .part v000002020e441c90_0, 2, 1;
+L_000002020e4446f0 .part v000002020e441f10_0, 2, 1;
+L_000002020e445370 .part v000002020e441fb0_0, 2, 1;
+L_000002020e444f10 .part v000002020e4420f0_0, 3, 1;
+L_000002020e4450f0 .part v000002020e441b50_0, 3, 1;
+L_000002020e4448d0 .part v000002020e441c90_0, 3, 1;
+L_000002020e445190 .part v000002020e441f10_0, 3, 1;
+L_000002020e4443d0 .part v000002020e441fb0_0, 3, 1;
+L_000002020e445230 .concat8 [ 1 1 1 1], L_000002020e3cd370, L_000002020e447b50, L_000002020e448250, L_000002020e4482c0;
+    .scope S_000002020e3d6f10;
+T_0 ;
+    %vpi_call 2 27 "$dumpfile", "selector_operacion_4bit.vcd" {0 0 0};
+    %vpi_call 2 28 "$dumpvars", 32'sb00000000000000000000000000000000, S_000002020e3d6f10 {0 0 0};
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v000002020e4420f0_0, 0, 4;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v000002020e441b50_0, 0, 4;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v000002020e441c90_0, 0, 4;
+    %pushi/vec4 4, 0, 4;
+    %store/vec4 v000002020e441f10_0, 0, 4;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v000002020e441fb0_0, 0, 4;
+    %pushi/vec4 0, 0, 3;
+    %store/vec4 v000002020e441970_0, 0, 3;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 3;
+    %store/vec4 v000002020e441970_0, 0, 3;
+    %delay 10000, 0;
+    %pushi/vec4 2, 0, 3;
+    %store/vec4 v000002020e441970_0, 0, 3;
+    %delay 10000, 0;
+    %pushi/vec4 3, 0, 3;
+    %store/vec4 v000002020e441970_0, 0, 3;
+    %delay 10000, 0;
+    %pushi/vec4 4, 0, 3;
+    %store/vec4 v000002020e441970_0, 0, 3;
+    %delay 10000, 0;
+    %pushi/vec4 5, 0, 3;
+    %store/vec4 v000002020e441970_0, 0, 3;
+    %delay 10000, 0;
+    %pushi/vec4 6, 0, 3;
+    %store/vec4 v000002020e441970_0, 0, 3;
+    %delay 10000, 0;
+    %pushi/vec4 7, 0, 3;
+    %store/vec4 v000002020e441970_0, 0, 3;
+    %delay 10000, 0;
+    %vpi_call 2 60 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "test\selector_operacion_4bit_tb.v";
+    "src\selector_operacion_4bit.v";
