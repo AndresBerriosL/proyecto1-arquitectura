@@ -14,13 +14,12 @@ module restador_4bit (
     wire C2;
     wire C3;
 
-    // Invertimos todos los bits de B
+    // complemento a 2 de B
     not (B0_neg, B[0]);
     not (B1_neg, B[1]);
     not (B2_neg, B[2]);
     not (B3_neg, B[3]);
 
-    // A + NOT(B) + 1
     full_adder_1bit FA0 (
         .A(A[0]),
         .B(B0_neg),
