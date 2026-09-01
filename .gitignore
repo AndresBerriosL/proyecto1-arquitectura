@@ -1,3 +1,6 @@
-# Archivos generados por simulación
+# Archivos generados
 *.vcd
 *_test
+top.json
+top.asc
+top.bin
