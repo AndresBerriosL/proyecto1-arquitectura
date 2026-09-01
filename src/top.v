@@ -1,22 +1,29 @@
 module top (
     input clk,
     input reset,
-    input guardar,
+    input confirmar,
+    input incrementar,
+    input disminuir,
     input usar_anterior,
-    input [2:0] operacion,
-    input [3:0] A,
-    input [3:0] OP2,
+
+    output [1:0] estado,
+    output [2:0] operacion,
+    output [3:0] A,
+    output [3:0] B,
     output [3:0] resultado
 );
 
-    calculadora_core_4bit CALC (
+    calculadora_sistema SISTEMA (
         .clk(clk),
         .reset(reset),
-        .guardar(guardar),
+        .confirmar(confirmar),
+        .incrementar(incrementar),
+        .disminuir(disminuir),
         .usar_anterior(usar_anterior),
+        .estado(estado),
         .operacion(operacion),
         .A(A),
-        .OP2(OP2),
+        .B(B),
         .resultado(resultado)
     );
 
