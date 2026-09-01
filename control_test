@@ -1,0 +1,123 @@
+#! 
+:ivl_version "14.0 (devel)" "(s20260301-391-g64f13540a-dirty)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\OSS-CA~2\lib\ivl\system.vpi";
+:vpi_module "C:\OSS-CA~2\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\OSS-CA~2\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\OSS-CA~2\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\OSS-CA~2\lib\ivl\va_math.vpi";
+S_000001fe640eafa0 .scope module, "control_estados_tb" "control_estados_tb" 2 3;
+ .timescale -9 -12;
+v000001fe6413c830_0 .var "clk", 0 0;
+v000001fe6413cc90_0 .var "confirmar", 0 0;
+v000001fe6413d410_0 .net "estado", 1 0, v000001fe640db100_0;  1 drivers
+v000001fe6413d550_0 .var "reset", 0 0;
+S_000001fe640eb130 .scope module, "CONTROL" "control_estados" 2 11, 3 1 0, S_000001fe640eafa0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "reset";
+    .port_info 2 /INPUT 1 "confirmar";
+    .port_info 3 /OUTPUT 2 "estado";
+L_000001fe640e8ae0 .functor NOT 1, v000001fe6413cc90_0, C4<0>, C4<0>, C4<0>;
+L_000001fe640e9100 .functor NOT 1, v000001fe6413d550_0, C4<0>, C4<0>, C4<0>;
+L_000001fe640e92c0 .functor NOT 1, L_000001fe6413d5f0, C4<0>, C4<0>, C4<0>;
+L_000001fe640e9090 .functor XOR 1, L_000001fe6413c290, L_000001fe6413d4b0, C4<0>, C4<0>;
+L_000001fe640e8f40 .functor AND 1, L_000001fe640e8ae0, L_000001fe6413c8d0, C4<1>, C4<1>;
+L_000001fe640e8d80 .functor AND 1, v000001fe6413cc90_0, L_000001fe640e92c0, C4<1>, C4<1>;
+L_000001fe640e8fb0 .functor OR 1, L_000001fe640e8f40, L_000001fe640e8d80, C4<0>, C4<0>;
+L_000001fe640e8a00 .functor AND 1, L_000001fe640e9100, L_000001fe640e8fb0, C4<1>, C4<1>;
+L_000001fe640e8a70 .functor AND 1, L_000001fe640e8ae0, L_000001fe6413c970, C4<1>, C4<1>;
+L_000001fe640e9020 .functor AND 1, v000001fe6413cc90_0, L_000001fe640e9090, C4<1>, C4<1>;
+L_000001fe640e8610 .functor OR 1, L_000001fe640e8a70, L_000001fe640e9020, C4<0>, C4<0>;
+L_000001fe640e8df0 .functor AND 1, L_000001fe640e9100, L_000001fe640e8610, C4<1>, C4<1>;
+v000001fe640daac0_0 .net *"_ivl_12", 0 0, L_000001fe6413c8d0;  1 drivers
+v000001fe640dab60_0 .net *"_ivl_16", 0 0, L_000001fe640e8a00;  1 drivers
+v000001fe640db1a0_0 .net *"_ivl_20", 0 0, L_000001fe6413c970;  1 drivers
+v000001fe640dae80_0 .net *"_ivl_24", 0 0, L_000001fe640e8df0;  1 drivers
+v000001fe640da7a0_0 .net *"_ivl_4", 0 0, L_000001fe6413d5f0;  1 drivers
+v000001fe640daf20_0 .net *"_ivl_7", 0 0, L_000001fe6413c290;  1 drivers
+v000001fe640dafc0_0 .net *"_ivl_9", 0 0, L_000001fe6413d4b0;  1 drivers
+v000001fe640da660_0 .net "avanzar0", 0 0, L_000001fe640e8d80;  1 drivers
+v000001fe640db060_0 .net "avanzar1", 0 0, L_000001fe640e9020;  1 drivers
+v000001fe640db420_0 .net "clk", 0 0, v000001fe6413c830_0;  1 drivers
+v000001fe640da5c0_0 .net "confirmar", 0 0, v000001fe6413cc90_0;  1 drivers
+v000001fe640db100_0 .var "estado", 1 0;
+v000001fe640db240_0 .net "inc0", 0 0, L_000001fe640e92c0;  1 drivers
+v000001fe640db2e0_0 .net "inc1", 0 0, L_000001fe640e9090;  1 drivers
+v000001fe640da700_0 .net "m0", 0 0, L_000001fe640e8fb0;  1 drivers
+v000001fe640da840_0 .net "m1", 0 0, L_000001fe640e8610;  1 drivers
+v000001fe640dac00_0 .net "mantener0", 0 0, L_000001fe640e8f40;  1 drivers
+v000001fe640da8e0_0 .net "mantener1", 0 0, L_000001fe640e8a70;  1 drivers
+v000001fe640da980_0 .net "nConfirmar", 0 0, L_000001fe640e8ae0;  1 drivers
+v000001fe640daca0_0 .net "nReset", 0 0, L_000001fe640e9100;  1 drivers
+v000001fe6413bed0_0 .net "reset", 0 0, v000001fe6413d550_0;  1 drivers
+v000001fe6413cdd0_0 .net "siguiente", 1 0, L_000001fe6413bd90;  1 drivers
+E_000001fe64097070 .event posedge, v000001fe640db420_0;
+L_000001fe6413d5f0 .part v000001fe640db100_0, 0, 1;
+L_000001fe6413c290 .part v000001fe640db100_0, 1, 1;
+L_000001fe6413d4b0 .part v000001fe640db100_0, 0, 1;
+L_000001fe6413c8d0 .part v000001fe640db100_0, 0, 1;
+L_000001fe6413c970 .part v000001fe640db100_0, 1, 1;
+L_000001fe6413bd90 .concat8 [ 1 1 0 0], L_000001fe640e8a00, L_000001fe640e8df0;
+    .scope S_000001fe640eb130;
+T_0 ;
+    %wait E_000001fe64097070;
+    %load/vec4 v000001fe6413cdd0_0;
+    %assign/vec4 v000001fe640db100_0, 0;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_000001fe640eafa0;
+T_1 ;
+    %delay 5000, 0;
+    %load/vec4 v000001fe6413c830_0;
+    %inv;
+    %store/vec4 v000001fe6413c830_0, 0, 1;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_000001fe640eafa0;
+T_2 ;
+    %vpi_call 2 22 "$dumpfile", "control_estados.vcd" {0 0 0};
+    %vpi_call 2 23 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001fe640eafa0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001fe6413c830_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001fe6413d550_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001fe6413cc90_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001fe6413d550_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001fe6413cc90_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001fe6413cc90_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001fe6413cc90_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001fe6413cc90_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001fe6413cc90_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001fe6413cc90_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001fe6413cc90_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001fe6413cc90_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 57 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "test\control_estados_tb.v";
+    "src\control_estados.v";
