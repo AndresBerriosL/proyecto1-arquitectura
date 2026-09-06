@@ -20,6 +20,11 @@ module restador_4bit (
     not (B2_neg, B[2]);
     not (B3_neg, B[3]);
 
+//Para implementar la resta se tiene que pasar a complemento a 1
+//y luego hacer la suma en complemento a 2. Básicamente usamos
+//lógica combinacional para poder hacer hacer A - B = A + (-B), pero
+// en el código lo podemos hacer a través de los full_adder_1bit.
+    
     full_adder_1bit FA0 (
         .A(A[0]),
         .B(B0_neg),
