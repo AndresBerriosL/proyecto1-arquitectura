@@ -16,7 +16,11 @@ module sumador_4bit (
         .S(S[0]),
         .Cout(C1)
     );
-
+    
+//Acá ya estamos haciendo una llamada a un módulo (full_adder_1bit) que
+//hace otra llamada a otro módulo (sumador_1bit), así que a partir de
+//acá habrán varias "nested functions" (creo que se les dice así)
+    
     full_adder_1bit FA1 (
         .A(A[1]),
         .B(B[1]),
@@ -41,4 +45,7 @@ module sumador_4bit (
         .Cout(Cout)
     );
 
+//Como resumen, estamos haciendo la suma bit a bit (de los números de 4 bits
+//A y B), hasta obtener los 4 bits de salida y el acarreo final de la suma.
+    
 endmodule
