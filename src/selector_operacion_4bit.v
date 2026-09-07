@@ -1,38 +1,55 @@
 module selector_operacion_4bit (
-    input [2:0] C,
-    input [3:0] SUMA,
-    input [3:0] RESTA,
-    input [3:0] RESTA_INV,
-    input [3:0] SHIFT_L,
-    input [3:0] SHIFT_R,
-    output [3:0] R
+    input [2:0] C,          //C = Código de 3 bits que indica qué operación seleccionar
+    input [3:0] SUMA,       //Resultado de la suma
+    input [3:0] RESTA,      //Resultado de la resta
+    input [3:0] RESTA_INV,  //Resultado de la resta al revés 
+    input [3:0] SHIFT_L,    //Desplazar a la Izquierda
+    input [3:0] SHIFT_R,    //Desplazar a la Derecha
+    output [3:0] R          //Resultado real dependiendo de la operación seleccionada
 );
-
+    //Señales negadas de C, se usan para detectar las distintas combinaciones del código de operación
     wire nC2;
     wire nC1;
     wire nC0;
 
+    //Señales que indican cuál operación fue seleccionada según el valor de C
     wire sel_suma;
     wire sel_resta;
     wire sel_inv;
     wire sel_sl;
     wire sel_sr;
 
+    //Señales auxiliares para armar cada bit del resultado final
     wire s0, r0, i0, l0, d0;
     wire s1, r1, i1, l1, d1;
     wire s2, r2, i2, l2, d2;
     wire s3, r3, i3, l3, d3;
 
+    //Se niega cada bit de C para poder detectar las distintas combinaciones
     not (nC2, C[2]);
     not (nC1, C[1]);
     not (nC0, C[0]);
 
+
+    // Se determina qué operación fue seleccionada según el valor de C:
+    // C = 001 --> suma
+    // C = 010 --> resta
+    // C = 011 --> resta invertida
+    // C = 100 --> shift left
+    // C = 101 --> shift right
     and (sel_suma,  nC2, nC1, C[0]);
     and (sel_resta, nC2, C[1], nC0);
     and (sel_inv,   nC2, C[1], C[0]);
     and (sel_sl,    C[2], nC1, nC0);
     and (sel_sr,    C[2], nC1, C[0]);
 
+
+    
+    //Para cada bit del resultado, se elige entre los distintos resultados posibles
+    //según cuál operación esté seleccionada, funcionando como un multiplexor
+    //hecho con compuertas and y or
+
+    //Bit 0 del resultado
     and (s0, sel_suma, SUMA[0]);
     and (r0, sel_resta, RESTA[0]);
     and (i0, sel_inv, RESTA_INV[0]);
@@ -40,6 +57,7 @@ module selector_operacion_4bit (
     and (d0, sel_sr, SHIFT_R[0]);
     or (R[0], s0, r0, i0, l0, d0);
 
+    //Bit 1 del resultado
     and (s1, sel_suma, SUMA[1]);
     and (r1, sel_resta, RESTA[1]);
     and (i1, sel_inv, RESTA_INV[1]);
@@ -47,6 +65,7 @@ module selector_operacion_4bit (
     and (d1, sel_sr, SHIFT_R[1]);
     or (R[1], s1, r1, i1, l1, d1);
 
+    //Bit 2 del resultado
     and (s2, sel_suma, SUMA[2]);
     and (r2, sel_resta, RESTA[2]);
     and (i2, sel_inv, RESTA_INV[2]);
@@ -54,6 +73,7 @@ module selector_operacion_4bit (
     and (d2, sel_sr, SHIFT_R[2]);
     or (R[2], s2, r2, i2, l2, d2);
 
+    //Bit 3 del resultado
     and (s3, sel_suma, SUMA[3]);
     and (r3, sel_resta, RESTA[3]);
     and (i3, sel_inv, RESTA_INV[3]);
